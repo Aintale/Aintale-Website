@@ -18,12 +18,18 @@
 
     // Sticky Navbar
     $(window).scroll(function () {
+        var $navbar = $('.navbar');
+        var $logo = $('.navbar-brand img');
+
         if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
+            $navbar.addClass('sticky-top shadow-sm');
+            $logo.attr('src', 'img/Aintale-Logo-Web-Black.png'); // 스크롤 시 검은색 로고로 변경
         } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
+            $navbar.removeClass('sticky-top shadow-sm');
+            $logo.attr('src', 'img/Aintale-Logo-Web-White.png'); // 원래 로고로 복구
         }
     });
+
     
     // Dropdown on mouse hover
     const $dropdown = $(".dropdown");
